@@ -10,7 +10,12 @@ const PostsList = () => {
 		</article>
 	))
 
-	return <div>PostsList</div>
+	return (
+		<section>
+			<h2>Posts</h2>
+			{renderedPosts}
+		</section>
+	)
 }
 
 export default PostsList
