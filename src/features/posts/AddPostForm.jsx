@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 // import { selectAllUsers } from '../users/usersSlice'
-import { postAdded } from './postsSlice'
 import { nanoid } from '@reduxjs/toolkit'
+import { postAdded } from './postsSlice'
 
 const AddPostForm = () => {
 	const dispatch = useDispatch()
