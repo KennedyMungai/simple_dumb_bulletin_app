@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-// import { selectAllUsers } from '../users/usersSlice'
+import { selectAllUsers } from '../users/usersSlice'
 import { postsAdded } from './postsSlice'
 
 const AddPostForm = () => {
@@ -11,7 +11,7 @@ const AddPostForm = () => {
 	const [content, setContent] = useState('')
 	const [userId, setUserId] = useState('')
 
-	// const users = useSelector(selectAllUsers)
+	const users = useSelector(selectAllUsers)
 
 	const onTitleChanged = (e) => setTitle(e.target.value)
 	const onContentChanged = (e) => setContent(e.target.value)
@@ -27,14 +27,14 @@ const AddPostForm = () => {
 
 	const canSave =
 		Boolean(title) &&
-		// && Boolean(content)
+		&& Boolean(content)
 		Boolean(userId)
 
-	// const usersOptions = users.map((user) => (
-	// 	<option key={user.id} value={user.id}>
-	// 		{user.name}
-	// 	</option>
-	// ))
+	const usersOptions = users.map((user) => (
+		<option key={user.id} value={user.id}>
+			{user.name}
+		</option>
+	))
 
 	return (
 		<section>
