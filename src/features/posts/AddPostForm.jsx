@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 // import { selectAllUsers } from '../users/usersSlice'
 import { nanoid } from '@reduxjs/toolkit'
-import { postAdded } from './postsSlice'
+import { postsAdded } from './postsSlice'
 
 const AddPostForm = () => {
 	const dispatch = useDispatch()
@@ -20,7 +20,7 @@ const AddPostForm = () => {
 
 	const onSavePostClicked = () => {
 		if (title && content) {
-			dispatch(postAdded({ title, content, id: nanoid }))
+			dispatch(postsAdded({ title, content, id: nanoid }))
 			setTitle('')
 			setContent('')
 		}
