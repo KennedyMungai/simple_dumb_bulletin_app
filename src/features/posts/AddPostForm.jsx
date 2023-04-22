@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { selectAllUsers } from '../users/usersSlice'
 import { postsAdded } from './postsSlice'
@@ -25,10 +25,7 @@ const AddPostForm = () => {
 		}
 	}
 
-	const canSave =
-		Boolean(title) &&
-		&& Boolean(content)
-		Boolean(userId)
+	const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
 
 	const usersOptions = users.map((user) => (
 		<option key={user.id} value={user.id}>
@@ -55,7 +52,7 @@ const AddPostForm = () => {
 					onChange={onAuthorChanged}
 				>
 					<option value=''></option>
-					{/* {usersOptions} */}
+					{usersOptions}
 				</select>
 				<label htmlFor='postContent'>Content:</label>
 				<textarea
