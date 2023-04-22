@@ -1,5 +1,11 @@
+import PostsList from './features/posts/PostsList'
+
 function App() {
-	return <p>Chicken Wings</p>
+	return (
+		<>
+			<PostsList />
+		</>
+	)
 }
 
 export default App
